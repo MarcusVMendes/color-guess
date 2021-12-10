@@ -1,0 +1,14 @@
+:root {
+
+  --circle-size: 100px;
+}
+
+#circle-list {
+  display: flex;
+}
+
+.ball {
+  width: var(--circle-size);
+  height: var(--circle-size);
+  border-radius: 100%;
+}
