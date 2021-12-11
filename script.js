@@ -1,4 +1,4 @@
-
+const circleList = document.querySelector('#circle-list');
 
 function randomNumber() {
   const number = Math.round(Math.random() * 255);
@@ -15,19 +15,40 @@ function colorCircle() {
   return color;
 }
 
+function setColorReference() {
+  const colorsArray = [];
+
+  for (let index = 0; index < 6; index += 1) {
+    const element = circleList.children[index];
+    const color = element
+      .getAttribute('style')
+      .replace(/background: /, '')
+      .replace(';', '');
+
+    colorsArray.push(color);
+  }
+
+  const colorReference = document.querySelector('#rgb-color');
+  const randomIndex = Math.round(Math.random() * 6);
+  colorReference.innerHTML = colorsArray[randomIndex];
+}
+
 function createCircle() {
-  const circleList = document.querySelector('#circle-list');
   const newCircle = document.createElement('div');
   newCircle.className = 'ball';
   newCircle.style.background = colorCircle();
+  newCircle.addEventListener('click', () => window.alert('clicou'));
 
   circleList.appendChild(newCircle);
 }
 
-function apendCircle(qt) {
-  for (let index = 0; index < qt; index += 1) {
+function apendCircle(qty) {
+  for (let index = 0; index < qty; index += 1) {
     createCircle();
   }
 }
 
-apendCircle(6);
+window.onload = () => {
+  apendCircle(6);
+  setColorReference();
+};
