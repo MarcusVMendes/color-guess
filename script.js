@@ -1,5 +1,7 @@
 const circleList = document.querySelector('#circle-list');
 const colorReference = document.querySelector('#rgb-color');
+const answer = document.querySelector('#answer');
+const score = document.querySelector('#score');
 
 function randomNumber() {
   const number = Math.round(Math.random() * 255);
@@ -34,7 +36,6 @@ function setColorReference() {
 }
 
 function colorMatch(e) {
-  const answer = document.querySelector('#answer');
   const reference = colorReference.innerHTML;
   const clickedCircle = e.target
     .getAttribute('style')
@@ -44,6 +45,7 @@ function colorMatch(e) {
   console.log(answer);
   if (reference === clickedCircle) {
     answer.innerHTML = 'Acertou!';
+    score.innerHTML = 3;
   } else {
     answer.innerHTML = 'Errou! Tente novamente!';
   }
