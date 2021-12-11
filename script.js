@@ -66,7 +66,13 @@ function apendCircle(qty) {
   }
 }
 
+function resetGame() {
+  const resetButton = document.querySelector('#reset-game');
+  resetButton.addEventListener('click', () => document.location.reload());
+}
+
 window.onload = () => {
   apendCircle(6);
   setColorReference();
+  resetGame();
 };
