@@ -1,4 +1,5 @@
 const circleList = document.querySelector('#circle-list');
+const colorReference = document.querySelector('#rgb-color');
 
 function randomNumber() {
   const number = Math.round(Math.random() * 255);
@@ -28,16 +29,31 @@ function setColorReference() {
     colorsArray.push(color);
   }
 
-  const colorReference = document.querySelector('#rgb-color');
-  const randomIndex = Math.round(Math.random() * 6);
+  const randomIndex = Math.round(Math.random() * 5);
   colorReference.innerHTML = colorsArray[randomIndex];
+}
+
+function colorMatch(e) {
+  const answer = document.querySelector('#answer');
+  const reference = colorReference.innerHTML;
+  const clickedCircle = e.target
+    .getAttribute('style')
+    .replace(/background: /, '')
+    .replace(';', '');
+
+  console.log(answer);
+  if (reference === clickedCircle) {
+    answer.innerHTML = 'Acertou!';
+  } else {
+    answer.innerHTML = 'Errou! Tente novamente!';
+  }
 }
 
 function createCircle() {
   const newCircle = document.createElement('div');
   newCircle.className = 'ball';
   newCircle.style.background = colorCircle();
-  newCircle.addEventListener('click', () => window.alert('clicou'));
+  newCircle.addEventListener('click', (e) => colorMatch(e));
 
   circleList.appendChild(newCircle);
 }

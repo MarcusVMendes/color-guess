@@ -2,6 +2,13 @@
   --circle-size: 100px;
 }
 
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
 #circle-list {
   display: flex;
 }
