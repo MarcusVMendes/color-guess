@@ -3,6 +3,7 @@ const colorReference = document.querySelector('#rgb-color');
 const answer = document.querySelector('#answer');
 const score = document.querySelector('#score');
 let punctuation = score.innerHTML;
+const QTY = 2;
 
 function randomNumber() {
   const number = Math.round(Math.random() * 255);
@@ -22,7 +23,7 @@ function colorCircle() {
 function setColorReference() {
   const colorsArray = [];
 
-  for (let index = 0; index < 6; index += 1) {
+  for (let index = 0; index < QTY; index += 1) {
     const element = circleList.children[index];
     const color = element
       .getAttribute('style')
@@ -32,7 +33,8 @@ function setColorReference() {
     colorsArray.push(color);
   }
 
-  const randomIndex = Math.round(Math.random() * 5);
+  const randomIndex = Math.round(Math.random() * (QTY - 1));
+  console.log(randomIndex);
   colorReference.innerHTML = colorsArray[randomIndex];
 }
 
@@ -44,9 +46,12 @@ function colorMatch(e) {
     .replace(';', '');
 
   if (reference === clickedCircle) {
+    e.target.classList.add('clicked');
     answer.innerHTML = 'Acertou!';
+
     punctuation = Number(punctuation) + 3;
     score.innerHTML = punctuation;
+    console.log(e.target.getAttribute('class'));
   } else {
     answer.innerHTML = 'Errou! Tente novamente!';
   }
@@ -73,7 +78,7 @@ function resetGame() {
 }
 
 window.onload = () => {
-  apendCircle(6);
+  apendCircle(QTY);
   setColorReference();
   resetGame();
 };
