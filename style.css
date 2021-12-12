@@ -17,5 +17,6 @@ body {
 .ball {
   width: var(--circle-size);
   height: var(--circle-size);
+  border: 3px solid white;
   border-radius: 100%;
 }

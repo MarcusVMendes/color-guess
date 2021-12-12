@@ -2,6 +2,7 @@ const circleList = document.querySelector('#circle-list');
 const colorReference = document.querySelector('#rgb-color');
 const answer = document.querySelector('#answer');
 const score = document.querySelector('#score');
+let punctuation = score.innerHTML;
 
 function randomNumber() {
   const number = Math.round(Math.random() * 255);
@@ -42,10 +43,10 @@ function colorMatch(e) {
     .replace(/background: /, '')
     .replace(';', '');
 
-  console.log(answer);
   if (reference === clickedCircle) {
     answer.innerHTML = 'Acertou!';
-    score.innerHTML = 3;
+    punctuation = Number(punctuation) + 3;
+    score.innerHTML = punctuation;
   } else {
     answer.innerHTML = 'Errou! Tente novamente!';
   }
