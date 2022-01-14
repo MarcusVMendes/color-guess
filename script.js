@@ -3,7 +3,7 @@ const colorReference = document.querySelector('#rgb-color');
 const answer = document.querySelector('#answer');
 const score = document.querySelector('#score');
 let punctuation = score.innerHTML;
-const QTY = 2;
+const QTY = 6;
 
 function randomNumber() {
   const number = Math.round(Math.random() * 255);
