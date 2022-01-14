@@ -1,8 +1,11 @@
 # Boas vindas ao repositório do projeto de adivinhação de Cor!
 
+
 Este projeto foi desenvolvido por [MarcusVMendes](http://www.linkedin.com/in/marcusvmendes-dev) enquanto estudante de Desenvolvimento Web Full Stack na [Trybe](https://www.linkedin.com/school/betrybe/) no periodo 2021/2022, como requisito parcial para aprovação de módulo.  #vqv 🚀
 
-[GH Pages - Projeto Color Guess](https://marcusvmendes.github.io/color-guess)
+A proposta do projeto é desenvolver um jogo de adivinhação de cores com base em um código rgb gerado aleatóriamente. A página do projeto pode ser acessada no link abaixo:
+
+[Pages - Projeto Color Guess](https://marcusvmendes.github.io/color-guess)
 # Habilidades
 
 - Manipular o DOM.
@@ -10,6 +13,31 @@ Este projeto foi desenvolvido por [MarcusVMendes](http://www.linkedin.com/in/mar
 - Manipular o Javascript.
 
 - Manipular o CSS.
+
+---
+
+## Instalação do projeto localmente
+
+Após cada um dos passos, haverá um exemplo do comando a ser digitado para fazer o que está sendo pedido, caso tenha dificuldades e o exemplo não seja suficiente, não hesite em me contatar em _marcus.mendes89@gmail.com_.
+
+1. Abra o terminal e crie um diretório no local de sua preferência com o comando **mkdir**:
+```javascript
+  mkdir projetos
+```
+
+2. Entre no diretório que acabou de criar e depois clone o projeto:
+```javascript
+  cd projetos
+  git clone git@github.com:MarcusVMendes/color-guess.git
+```
+
+3. Acesse o diretório do projeto e depois utilize o comando **npm install** para instalar todas as dependências necessárias:
+```javascript
+  cd color-guess
+  npm install
+```
+
+4. Recomenda-se o uso da extensão ***Live Server*** para executar o projeto no browser. 
 
 ---
 
