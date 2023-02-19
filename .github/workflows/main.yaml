@@ -1,0 +1,19 @@
+name: Test HTML Lint
+
+on:
+  push:
+    branches:
+      - develop
+
+jobs:
+  lint-html:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Setup Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '16.x'
+    - run: npm install htmlhint
+    - run: npx htmlhint '**/*.html'
